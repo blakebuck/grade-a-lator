@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Orbitron:900' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="modal fade">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+            <h1 class="text-center">Grade-A-Lator</h1>
+            <br><br>
+            <form>
+                <table>
+                    <tr>
+                        <th>
+                            <label for="catName">
+                                New Category Name
+                            </label>
+                        </th>
+                        <th>
+                            <label for="catPercent">
+                                % of Grade
+                            </label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="catName" type="text">
+                        </td>
+                        <td>
+                            <input id="catPercent" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <br>
+                            <button type="button" id="addCat" class="btn btn-primary">Add Category</button>
+                        </td>
+                    </tr>
+                </table>
+                <br><br>
+                <div id="catContainer"></div>
+                <br>
+                <div class="text-center">
+                    <button id="doTheMath" type="button" class="btn btn-success">Do the Math!</button>
+                </div>
+            </form>
+        </div>
+
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="calculator.js"></script>
+    </body>
+</html>

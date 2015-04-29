@@ -1,0 +1,24 @@
+.deleteCat {
+    cursor: pointer;
+    font-size: 12px;
+}
+
+fieldset {
+    margin-top: 20px;
+}
+
+table {
+    margin: auto;
+}
+
+td, th {
+    padding-bottom: 5px;
+}
+td:first-child, th:first-child {
+    padding-right: 5px;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+}
+
