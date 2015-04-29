@@ -129,16 +129,16 @@ function doTheMath(){
         }
     }
 
-    var percentDiff = (1 - (course.percentageTotal / 100)) * 100;
+    var percentDiff = (1 - (calculation.percentageTotal / 100)) * 100;
 
     if (percentDiff == 0){
         // Don't show average needed
     }
     else {
-        var a = Math.round(((90 - points * (course.percentageTotal/100)) / percentDiff) * 100);
-        var b = Math.round(((80 - points * (course.percentageTotal/100)) / percentDiff) * 100);
-        var c = Math.round(((70 - points * (course.percentageTotal/100)) / percentDiff) * 100);
-        var d = Math.round(((60 - points * (course.percentageTotal/100)) / percentDiff) * 100);
+        var a = Math.round(((90 - points * (calculation.percentageTotal/100)) / percentDiff) * 100);
+        var b = Math.round(((80 - points * (calculation.percentageTotal/100)) / percentDiff) * 100);
+        var c = Math.round(((70 - points * (calculation.percentageTotal/100)) / percentDiff) * 100);
+        var d = Math.round(((60 - points * (calculation.percentageTotal/100)) / percentDiff) * 100);
     }
 
     a = a >= 0 ? a : 0;
