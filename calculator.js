@@ -31,7 +31,7 @@ $(function(){
 
         // Prevent percentage over 100
         if ((course.percentageTotal + percent) > 100){
-            modal("The total percentage for all categories can not greater than 100%.");
+            modal("The total percentage for all categories can not be greater than 100%.");
             return;
         }
 
@@ -129,16 +129,16 @@ function doTheMath(){
         }
     }
 
-    var percentDiff = (1 - (course.percentageTotal / 100)) * 100;
+    var percentDiff = (1 - (calculation.percentageTotal / 100)) * 100;
 
     if (percentDiff == 0){
         // Don't show average needed
     }
     else {
-        var a = Math.round(((90 - points * (course.percentageTotal/100)) / percentDiff) * 100);
-        var b = Math.round(((80 - points * (course.percentageTotal/100)) / percentDiff) * 100);
-        var c = Math.round(((70 - points * (course.percentageTotal/100)) / percentDiff) * 100);
-        var d = Math.round(((60 - points * (course.percentageTotal/100)) / percentDiff) * 100);
+        var a = Math.ceil(((90 - points * (calculation.percentageTotal/100)) / percentDiff) * 100);
+        var b = Math.ceil(((80 - points * (calculation.percentageTotal/100)) / percentDiff) * 100);
+        var c = Math.ceil(((70 - points * (calculation.percentageTotal/100)) / percentDiff) * 100);
+        var d = Math.ceil(((60 - points * (calculation.percentageTotal/100)) / percentDiff) * 100);
     }
 
     a = a >= 0 ? a : 0;
@@ -154,5 +154,9 @@ function doTheMath(){
     //else if (points >= 60) grade = "D";
     //else grade = "F";
 
-    modal("Your current grade is <strong>" + points + "%</strong><br><br> You will need to average <strong>" + a + "%</strong> on everything else to get 90% in the class.<br><br> You will need to average <strong>" + b + "%</strong> on everything else to get 80% in the class.<br><br> You will need to average <strong>" + c + "%</strong> on everything else to get 70% in the class.<br><br> You will need to average <strong>" + d + "%</strong> on everything else to get 60% in the class.");
+    points = points - points.toFixed(1) == 0 ? points : points.toFixed(1);
+
+    var message = "Your current grade is <strong>" + points + "%</strong>";
+    message = calculation.percentageTotal < 100 ? message + "<br><br> You will need to average <strong>" + a + "%</strong> on everything else to get 90% in the class.<br><br> You will need to average <strong>" + b + "%</strong> on everything else to get 80% in the class.<br><br> You will need to average <strong>" + c + "%</strong> on everything else to get 70% in the class.<br><br> You will need to average <strong>" + d + "%</strong> on everything else to get 60% in the class." : message;
+    modal(message);
 }
