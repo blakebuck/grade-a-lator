@@ -77,6 +77,7 @@ function bindDeleteCat(){
 
 function modal(message){
     $(".modal-body").html(message);
+
     $('.modal').modal('show');
 }
 
