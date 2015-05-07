@@ -61,6 +61,7 @@ function bindAddItem(){
         var item = $(newItem);
         item.find("input").attr("data-value", $(this).attr("data-value"));
         $(this).closest("tr").before(item);
+        return false;
     });
 }
 
@@ -72,6 +73,7 @@ function bindDeleteCat(){
         course.percentageTotal -= course.categories[catName];
         delete course.categories[catName];
         $(this).closest("fieldset").remove();
+        return false;
     });
 }
 
