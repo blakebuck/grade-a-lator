@@ -31,7 +31,7 @@ $(function(){
 
         // Prevent percentage over 100
         if ((course.percentageTotal + percent) > 100){
-            modal("The total percentage for all categories can not be greater than 100%.");
+            modal("The total percentage for all categories can not greater than 100%.");
             return;
         }
 
@@ -79,7 +79,6 @@ function bindDeleteCat(){
 
 function modal(message){
     $(".modal-body").html(message);
-
     $('.modal').modal('show');
 }
 
@@ -126,9 +125,11 @@ function doTheMath(){
     // Adjust overall percentages & calculate total points
     for (key in calculation) {
         if (calculation.hasOwnProperty(key) && key != "percentageTotal") {
-            calculation[key].percentage = calculation[key].percentage / calculation.percentageTotal;
-            points += calculation[key].percentage * calculation[key].average;
-            console.log(key + " " + calculation[key].percentage);
+            if (calculation.percentageTotal > 0){
+                calculation[key].percentage = calculation[key].percentage / calculation.percentageTotal;
+                points += calculation[key].percentage * calculation[key].average;
+                //console.log(key + " " + calculation[key].average);
+            }
         }
     }
 
