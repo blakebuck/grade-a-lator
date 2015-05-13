@@ -31,7 +31,7 @@ $(function(){
 
         // Prevent percentage over 100
         if ((course.percentageTotal + percent) > 100){
-            modal("The total percentage for all categories can not greater than 100%.");
+            modal("The total percentage for all categories can not be greater than 100%.");
             return;
         }
 
