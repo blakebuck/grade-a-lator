@@ -2,7 +2,10 @@
     cursor: pointer;
     font-size: 12px;
 }
-
+#disclaimer {
+    font-size: 18px;
+    font-weight: bold;
+}
 fieldset {
     margin-top: 20px;
 }
